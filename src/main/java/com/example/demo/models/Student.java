@@ -20,10 +20,15 @@ public class Student {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
+    @Column(unique = true,nullable = false)
     private String rollNumber;
+
+    @Column(unique = true,nullable = false)
     private String email;
 
     private String name;
+
+    private int age;
 
     @CreationTimestamp
     private Date createdOn;
@@ -33,10 +38,12 @@ public class Student {
 
 
 
-    @OneToMany
+
+    @OneToMany(mappedBy = "student")
     private List<Book> books;
 
-    @OneToMany
+
+    @OneToMany(mappedBy = "student")
     private List<Transaction> transactions;
 
 }

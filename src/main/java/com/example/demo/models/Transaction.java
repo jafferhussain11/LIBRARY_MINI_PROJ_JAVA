@@ -2,8 +2,10 @@ package com.example.demo.models;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.annotations.CreationTimestamp;
 
 import java.io.Serializable;
+import java.util.Date;
 
 
 @Entity
@@ -20,8 +22,13 @@ public class Transaction implements Serializable {
 
     private String txId;
 
+    @CreationTimestamp
+    private Date createdOn;
+
+    @Enumerated(value = EnumType.STRING)
     private TransactionType transactionType;
 
+    @Enumerated(value = EnumType.STRING)
     private TransactionStatus transactionStatus;
 
     @JoinColumn
@@ -31,5 +38,9 @@ public class Transaction implements Serializable {
     @JoinColumn
     @ManyToOne
     private Student student;
+
+    @JoinColumn
+    @ManyToOne
+    private Admin admin;
 
 }

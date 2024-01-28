@@ -31,7 +31,7 @@ public class Book {
     @Enumerated(value = EnumType.STRING)
     private Genre genre;
 
-    @OneToMany
+    @OneToMany(mappedBy = "book")
     private List<Transaction> transactions;
 
 
