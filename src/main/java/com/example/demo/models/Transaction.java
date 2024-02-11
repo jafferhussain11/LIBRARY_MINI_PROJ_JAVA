@@ -18,7 +18,7 @@ public class Transaction implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Integer id;
 
     private String txId;
 
@@ -31,7 +31,7 @@ public class Transaction implements Serializable {
     @Enumerated(value = EnumType.STRING)
     private TransactionStatus transactionStatus;
 
-    @JoinColumn
+    @JoinColumn // foreign key of book table is stored in transaction table
     @ManyToOne
     private Book book;  // MAny rows in Transaction table can belong to one book
 

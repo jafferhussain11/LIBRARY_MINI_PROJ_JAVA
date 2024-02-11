@@ -17,7 +17,7 @@ public class Author {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Integer id;
 
     private String name;
 
@@ -27,6 +27,6 @@ public class Author {
     @CreationTimestamp
     private Date createdOn;
 
-    @OneToMany(mappedBy = "author")
+    @OneToMany(mappedBy = "author") //will fetch all the books written by the author or the foreign key is in the book table
     private List<Book> books;
 }
