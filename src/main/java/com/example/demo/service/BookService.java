@@ -22,13 +22,13 @@ public class BookService {
 
     public void createOrUpdateBook(Book book){
 
-        Author bookAuthor = book.getAuthor();
+        Author bookAuthor = book.getAuthor(); // string value
 
         Author existingAuthor = authorService.getOrCreate(bookAuthor);
 
         book.setAuthor(existingAuthor);
 
-        bookRepository.save(book);
+        bookRepository.save(book); //
     }
 
     public List<Book> findBook(String key, String value) throws Exception {

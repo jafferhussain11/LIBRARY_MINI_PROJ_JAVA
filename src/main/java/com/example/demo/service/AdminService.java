@@ -14,4 +14,9 @@ public class AdminService {
         //save the admin to the database
         adminRepository.save(admin);
     }
+
+    public Admin findAdminById(int id) throws Exception {
+        //find the admin by id
+        return adminRepository.findById(id).orElse(null);
+    }
 }

@@ -30,8 +30,8 @@ public class BookController {
     }
 
     @GetMapping("/getBooks")
-    public List<Book> addBook(@RequestBody @Valid SearchBookRequest searchBookRequest) throws Exception{
-
-        return bookService.findBook(searchBookRequest.getSearchKey(), searchBookRequest.getSearchValue());
+    public List<Book> getBook(@RequestBody @Valid SearchBookRequest searchBookRequest) throws Exception{
+        List<Book> list = bookService.findBook(searchBookRequest.getSearchKey(), searchBookRequest.getSearchValue());
+        return list;
     }
 }
