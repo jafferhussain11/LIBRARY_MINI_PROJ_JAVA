@@ -20,8 +20,8 @@ public class TransactionController {
 
 
     @PostMapping("/initiateTransaction")
-    public void initiateTransaction(@RequestBody @Valid CreateTransactionRequest createTransactionRequest){
+    public String initiateTransaction(@RequestBody @Valid CreateTransactionRequest createTransactionRequest) throws Exception {
 
-        transactionService.initiateTransaction(createTransactionRequest);
+       return transactionService.initiateTransaction(createTransactionRequest);
     }
 }

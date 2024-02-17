@@ -22,6 +22,8 @@ public class Transaction implements Serializable {
 
     private String txId;
 
+    private Integer fine;
+
     @CreationTimestamp
     private Date createdOn;
 
